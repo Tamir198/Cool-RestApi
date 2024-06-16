@@ -81,7 +81,7 @@ components:
           type: number
           description: The result of the operation
       example:
-        result: 0.80082819046101150206595775671303272247314453125
+        result: 15
   securitySchemes:
     bearerAuth:
       type: http
