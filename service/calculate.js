@@ -17,7 +17,7 @@ exports.calculate = function (body, operation) {
       case 'add':
         result = firstNum + secondNum;
         break;
-      case 'substract':
+      case 'subtract':
         result = firstNum - secondNum;
         break;
       case 'multiply':
