@@ -1,0 +1,89 @@
+openapi: 3.0.1
+info:
+  title: Arithmetic API
+  description: API for performing arithmetic operations
+  version: 1.0.0
+servers:
+- url: http://localhost:3000/api
+paths:
+  /calculate:
+    post:
+      summary: Perform arithmetic operation
+      description: Receives two numeric values and performs an arithmetic operation
+        specified in the header.
+      operationId: calculatePOST
+      parameters:
+      - name: operation
+        in: header
+        description: The arithmetic operation to perform
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          enum:
+          - add
+          - substract
+          - multyply
+          - divide
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/calculate_body'
+        required: true
+      responses:
+        "200":
+          description: Result of the arithmetic operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+      security:
+      - bearerAuth: []
+      x-swagger-router-controller: Default
+components:
+  schemas:
+    ArithmeticRequest:
+      required:
+      - firstNum
+      - secondNum
+      type: object
+      properties:
+        firstNum:
+          type: number
+        secondNum:
+          type: number
+    ArithmeticResponse:
+      type: object
+      properties:
+        result:
+          type: number
+    calculate_body:
+      type: object
+      properties:
+        firstNum:
+          type: number
+          description: The first number
+          example: 5
+        secondNum:
+          type: number
+          description: The second number
+          example: 10
+    inline_response_200:
+      type: object
+      properties:
+        result:
+          type: number
+          description: The result of the operation
+      example:
+        result: 0.80082819046101150206595775671303272247314453125
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
