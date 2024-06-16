@@ -46,7 +46,7 @@ paths:
           description: Unauthorized
       security:
       - bearerAuth: []
-      x-swagger-router-controller: Default
+      x-swagger-router-controller: calculate
 components:
   schemas:
     ArithmeticRequest:

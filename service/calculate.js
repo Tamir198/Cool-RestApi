@@ -8,7 +8,7 @@
  * operation String The arithmetic operation to perform
  * returns inline_response_200
  **/
-exports.calculatePOST = function (body, operation) {
+exports.calculate = function (body, operation) {
   return new Promise(function (resolve, reject) {
     const { firstNum, secondNum } = body;
     let result;
