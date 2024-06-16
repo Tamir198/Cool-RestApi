@@ -24,8 +24,9 @@ paths:
           enum:
           - add
           - substract
-          - multyply
+          - multiply
           - divide
+          - exponent
       requestBody:
         content:
           application/json:
