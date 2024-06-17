@@ -1,5 +1,7 @@
 'use strict';
 
+const { ERRORS, OPERATIONS } = require('../constants/constants');
+
 /**
  * Perform arithmetic operation
  * Receives two numeric values and performs an arithmetic operation specified in the header.
@@ -9,35 +11,40 @@
  * returns inline_response_200
  **/
 exports.calculate = function (body, operation) {
-  return new Promise(function (resolve, reject) {
+  return new Promise((resolve, reject) => {
     const { firstNum, secondNum } = body;
-    let result;
-
-    switch (operation) {
-      case 'add':
-        result = firstNum + secondNum;
-        break;
-      case 'subtract':
-        result = firstNum - secondNum;
-        break;
-      case 'multiply':
-        result = firstNum * secondNum;
-        break;
-      case 'divide':
-        if (secondNum === 0) {
-          reject({ error: 'Division by zero is not allowed' });
-          return;
-        }
-        result = firstNum / secondNum;
-        break;
-      case 'exponent':
-        result = Math.pow(firstNum, secondNum);
-        break;
-      default:
-        reject({ error: 'Invalid or not supported operation' });
-        return;
+    if (isNaN(firstNum) || isNaN(secondNum)) {
+      return reject(new Error(ERRORS.MUST_BE_NUMBERS));
     }
 
-    resolve({ result });
+    let result;
+
+    try {
+      switch (operation) {
+        case OPERATIONS.ADD:
+          result = firstNum + secondNum;
+          break;
+        case OPERATIONS.SUBTRACT:
+          result = firstNum - secondNum;
+          break;
+        case OPERATIONS.MULTIPLY:
+          result = firstNum * secondNum;
+          break;
+        case OPERATIONS.DIVIDE:
+          if (secondNum === 0) {
+            throw new Error(ERRORS.DIVISION_BY_ZERO);
+          }
+          result = firstNum / secondNum;
+          break;
+        case OPERATIONS.EXPONENT:
+          result = Math.pow(firstNum, secondNum);
+          break;
+        default:
+          throw new Error(ERRORS.INVALID_OPERATION);
+      }
+      resolve({ result });
+    } catch (error) {
+      reject(error);
+    }
   });
 };
