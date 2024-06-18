@@ -1,3 +1,12 @@
+
+#### Please note: 
+
+I wanted to make it easy for you to test this, so the validation of the JWT is using a variable  `const secretKey = 'your-secret-key';`.
+
+If this were production code, I would have placed the secretKey inside an .env file.
+
+---
+
 ## Running the server
 To run the server first clone the project then run:
 
@@ -73,7 +82,7 @@ Once done you should see a new image :
 
 ![image](https://github.com/Tamir198/Cool-RestApi/assets/34707669/98da3670-e4ea-49e8-bf91-dd4c2da3ece7)
 
-To generate container from the iamge: 
+To generate container from the image: 
 
 ```
 docker compose up
@@ -96,15 +105,6 @@ cool-restapi-cool-rest-api-1  | Swagger-ui is available on http://localhost:3000
 And live container as well (it will run on the same port as the localhost so you may need to close your local server first): 
 
 ![image](https://github.com/Tamir198/Cool-RestApi/assets/34707669/acd5a375-1b66-4747-a12c-7b0f84433257)
-
----
-
-#### Please note: 
-
-I wanted to make it easy for you to test this, so the validation of the JWT is using a variable  `const secretKey = 'your-secret-key';`.
-
-If this were production code, I would have placed the secretKey inside an .env file.
-
 
 
 
