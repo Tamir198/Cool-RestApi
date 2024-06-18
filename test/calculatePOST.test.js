@@ -100,4 +100,27 @@ describe('calculatePOST', () => {
       400
     );
   });
+
+  it('should handle invalid token', async () => {
+    const invalidToken = 'invalid_token';
+    auth.mockRejectedValue({ message: ERRORS.INVALID_TOKEN, status: 401 });
+    utils.writeJson.mockImplementation((res, payload, status) =>
+      res.status(status).json(payload)
+    );
+
+    const response = await request(app)
+      .post('/api/calculate')
+      .set('Authorization', `Bearer ${invalidToken}`)
+      .set('operation', OPERATIONS.EXPONENT)
+      .send(exampleBody);
+
+    expect(response.status).toBe(401);
+    expect(response.body).toEqual({ message: ERRORS.INVALID_TOKEN });
+    expect(auth).toHaveBeenCalledWith(expect.anything(), expect.anything());
+    expect(utils.writeJson).toHaveBeenCalledWith(
+      expect.anything(),
+      { message: ERRORS.INVALID_TOKEN },
+      401
+    );
+  });
 });
