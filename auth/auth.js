@@ -3,7 +3,9 @@ const fs = require('fs');
 const path = require('path');
 const { ERRORS, ROLLS } = require('../constants/constants');
 
-const secretKey = 'your-secret-key';
+// const secretKey = 'your-secret-key';
+const secretKey = process.env.SECRET_KEY;
+console.log(secretKey);
 
 function auth(req, res) {
   return new Promise((resolve, reject) => {
