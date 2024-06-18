@@ -41,9 +41,7 @@ Or you can test it via Swagger UI interface :
 https://github.com/Tamir198/Cool-RestApi/assets/34707669/66e44f91-3b5b-4036-bae0-210695123bc9
 
 
-
-
-For testing you can check those tokens (this will not go production and does not have any dangarous data so i put the tokens in here) :  
+For testing purposes, you can use these tokens (since this will not go into production and does not contain any sensitive data, I have included the tokens here):
 
 | User Type          | Name                     | Password   | Role       | Token                                                                                               |
 |--------------------|--------------------------|------------|------------|-----------------------------------------------------------------------------------------------------|
