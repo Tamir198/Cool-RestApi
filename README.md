@@ -28,6 +28,12 @@ Once the server is running you test it with postman - just make sure to change t
 
 https://github.com/Tamir198/Cool-RestApi/assets/34707669/ec72e6b4-6218-45e7-93e3-9779e9c54152
 
+Also for checking all the server functionality dont forget to check all the edge cases by changing the `operation` header : 
+
+https://github.com/Tamir198/Cool-RestApi/assets/34707669/bc77c80f-02f5-42c9-b65b-0087b44e4587
+
+
+
 Or you can test it via Swagger UI interface : 
 
 
