@@ -1,9 +1,10 @@
 
 #### Please note: 
 
-I wanted to make it easy for you to test this, so the validation of the JWT is using a variable  `const secretKey = 'your-secret-key';`.
+Before you run the project you sohuld have `.env` file with `SECRET_KEY=the value` in the root level of the project : 
+![image](https://github.com/Tamir198/Cool-RestApi/assets/34707669/9bd3037a-ec7b-43d1-90f7-129d8fe96012)
 
-If this were production code, I would have placed the secretKey inside an .env file.
+ 
 
 ---
 
