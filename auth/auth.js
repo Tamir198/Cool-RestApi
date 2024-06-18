@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
-const fs = require('fs');
-const path = require('path');
-const { ERRORS, ROLLS } = require('../constants');
+const { ERRORS } = require('../constants');
+
+const { authorizeUser } = require('../dall/index');
 
 const secretKey = process.env.SECRET_KEY;
 
@@ -20,39 +20,9 @@ function auth(req, res) {
         return reject({ status: statusCode, message: err });
       }
 
-      fs.readFile(
-        path.join(__dirname, '../mock/users.json'),
-        'utf8',
-        (err, data) => {
-          if (err) {
-            return reject({
-              status: 500,
-              message: ERRORS.INTERVAL_SERVER_ERROR,
-              err,
-            });
-          }
-
-          const users = JSON.parse(data);
-          const user = users.find(
-            (user) =>
-              user.name === decodedToken.name &&
-              user.password === decodedToken.password
-          );
-
-          if (!user) {
-            return reject({ status: 404, message: ERRORS.USER_NOT_FOUND });
-          }
-
-          if (user.role !== ROLLS.ADMIN) {
-            return reject({
-              status: 403,
-              message: ERRORS.FORBIDDEN_NO_ADMIN_ACCESS,
-            });
-          }
-
-          resolve(user);
-        }
-      );
+      authorizeUser(decodedToken)
+        .then((user) => resolve(user))
+        .catch((error) => reject(error));
     });
   });
 }
