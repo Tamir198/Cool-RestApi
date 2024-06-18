@@ -17,10 +17,10 @@ npm start
 
 Your server will run on `http://localhost:3000`.
 
-To view the Swagger UI interface:
+To view the Swagger UI interface go to:
 
 ```
-open http://localhost:3000/docs
+http://localhost:3000/docs
 ```
 
 ---
