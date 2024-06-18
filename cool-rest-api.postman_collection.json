@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "18da2b60-1e40-4f3d-be89-2763e9ad5b27",
+		"name": "cool-rest-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27071172"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/api/calculate",
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "payload",
+							"value": "{}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "{}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTm9uLWV4cGlyZS11c2VyIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTg2OTkyNDMsImV4cCI6MjAzNDI3NTI0M30.pPIRx6vOjzXVcAwJi82C9bLyRyDTyznspDAIGrSZSGk",
+						"type": "default"
+					},
+					{
+						"key": "operation",
+						"value": "add",
+						"type": "default",
+						"disabled": true
+					},
+					{
+						"key": "operation",
+						"value": "subtract",
+						"type": "default"
+					},
+					{
+						"key": "operation",
+						"value": "multiply",
+						"type": "default",
+						"disabled": true
+					},
+					{
+						"key": "operation",
+						"value": "divide",
+						"type": "default",
+						"disabled": true
+					},
+					{
+						"key": "operation",
+						"value": "exponent",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstNum\": 10,\r\n  \"secondNum\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/calculate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
