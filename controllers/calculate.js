@@ -18,8 +18,8 @@ module.exports.calculatePOST = function calculatePOST(
         .then(function (response) {
           utils.writeJson(res, response);
         })
-        .catch(function (response) {
-          utils.writeJson(res, response);
+        .catch(function (error) {
+          utils.writeJson(res, { message: error.message }, 400);
         });
     })
     .catch((error) => {

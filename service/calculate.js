@@ -13,6 +13,7 @@ const { ERRORS, OPERATIONS } = require('../constants/constants');
 exports.calculate = function (body, operation) {
   return new Promise((resolve, reject) => {
     const { firstNum, secondNum } = body;
+
     if (isNaN(firstNum) || isNaN(secondNum)) {
       return reject(new Error(ERRORS.MUST_BE_NUMBERS));
     }
