@@ -1,8 +1,10 @@
 
 #### Please note: 
 
-Before you run the project you sohuld have `.env` file with `SECRET_KEY=the value` in the root level of the project : 
-![image](https://github.com/Tamir198/Cool-RestApi/assets/34707669/9bd3037a-ec7b-43d1-90f7-129d8fe96012)
+Before you run the project you should have `.env` file with `SECRET_KEY=the value` in the root level of the project : 
+![image](https://github.com/Tamir198/Cool-RestApi/assets/34707669/d0c02689-4426-4c56-a051-585e47d16aa6)
+
+
 
  
 
