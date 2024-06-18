@@ -18,6 +18,24 @@ open http://localhost:3000/docs
 
 ## Test that everything works:
 
+For easy start you can import the postman collection via the  [cool-rest-api.postman_collection.json](https://github.com/Tamir198/Cool-RestApi/blob/main/cool-rest-api.postman_collection.json) file.
+
+once imported you will see this in your postman : 
+
+![image](https://github.com/Tamir198/Cool-RestApi/assets/34707669/84cdcac5-705c-4a8b-b5f5-3fc981155e3d)
+
+Once the server is running you test it with postman - just make sure to change the tokens for different results just like the video below : 
+
+
+Or you can test it via Swagger UI interface : 
+
+
+
+https://github.com/Tamir198/Cool-RestApi/assets/34707669/66e44f91-3b5b-4036-bae0-210695123bc9
+
+
+
+
 For testing you can check those tokens (this will not go production and does not have any dangarous data so i put the tokens in here) :  
 
 | User Type          | Name                     | Password   | Role       | Token                                                                                               |
