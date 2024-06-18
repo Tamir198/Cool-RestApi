@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const path = require('path');
-const { ERRORS, ROLLS } = require('../constants/constants');
+const { ERRORS, ROLLS } = require('../constants');
 
 const secretKey = process.env.SECRET_KEY;
 

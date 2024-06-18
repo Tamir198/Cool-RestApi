@@ -1,5 +1,5 @@
 const { calculate } = require('../service/calculate');
-const { ERRORS, OPERATIONS } = require('../constants/constants');
+const { ERRORS, OPERATIONS } = require('../constants');
 
 const testOperation = async (body, operation, expectedResult) => {
   try {

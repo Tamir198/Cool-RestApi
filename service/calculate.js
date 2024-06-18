@@ -1,6 +1,6 @@
 'use strict';
 
-const { ERRORS, OPERATIONS } = require('../constants/constants');
+const { ERRORS, OPERATIONS } = require('../constants');
 
 /**
  * Perform arithmetic operation
