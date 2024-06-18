@@ -97,4 +97,14 @@ And live container as well (it will run on the same port as the localhost so you
 
 ![image](https://github.com/Tamir198/Cool-RestApi/assets/34707669/acd5a375-1b66-4747-a12c-7b0f84433257)
 
+---
+
+#### Please note: 
+
+I wanted to make it easy for you to test this, so the validation of the JWT is using a variable  `const secretKey = 'your-secret-key';`.
+
+If this were production code, I would have placed the secretKey inside an .env file.
+
+
+
 
