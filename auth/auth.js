@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const path = require('path');
+const { ERRORS, ROLLS } = require('../constants/constants');
+
 const secretKey = 'your-secret-key';
 
 function auth(req, res) {
@@ -9,7 +11,7 @@ function auth(req, res) {
     const token = authHeader && authHeader.split(' ')[1];
 
     if (!token) {
-      return reject({ status: 401, message: 'Unauthorized' });
+      return reject({ status: 401, message: ERRORS.NOT_AUTHORIZED });
     }
 
     jwt.verify(token, secretKey, (err, decodedToken) => {
@@ -25,7 +27,7 @@ function auth(req, res) {
           if (err) {
             return reject({
               status: 500,
-              message: 'Internal Server Error',
+              message: ERRORS.INTERVAL_SERVER_ERROR,
               err,
             });
           }
@@ -38,13 +40,13 @@ function auth(req, res) {
           );
 
           if (!user) {
-            return reject({ status: 404, message: 'User not found' });
+            return reject({ status: 404, message: ERRORS.USER_NOT_FOUND });
           }
 
-          if (user.role !== 'admin') {
+          if (user.role !== ROLLS.ADMIN) {
             return reject({
               status: 403,
-              message: 'Forbidden: Admin access required',
+              message: ERRORS.FORBIDDEN_NO_ADMIN_ACCESS,
             });
           }
 
