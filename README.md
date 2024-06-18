@@ -67,7 +67,8 @@ For testing purposes, you can use these tokens (since this will not go into prod
 
 Run `npm test` and you should see all the tests running: 
 
-![image](https://github.com/Tamir198/Cool-RestApi/assets/34707669/fc7f21c4-c729-4ab2-8bf8-55002eb8e0bb)
+![image](https://github.com/Tamir198/Cool-RestApi/assets/34707669/1c1b16d8-cf55-4c77-a617-ba59127e11a8)
+
 
 
 ---
