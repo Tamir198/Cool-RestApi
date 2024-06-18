@@ -62,7 +62,7 @@ For testing purposes, you can use these tokens (since this will not go into prod
 | Admin (Expired)    | Tamir                    | 123456     | admin      | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVGFtaXIiLCJwYXNzd29yZCI6IjEyMzQ1NiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxODY5NzU5NywiZXhwIjoxNzE4NzAxMTk3fQ.QuR3OoCKRUiiO54ybRwTsWQgMzNit9p2LhXi5Wej_1A` |
 | User (Expired)     | yona                     | 123456     | user       | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieW9uYSIsInBhc3N3b3JkIjoiMTIzNDU2Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2OTg5MjcsImV4cCI6MTcxODY5ODk4N30.bkEeKpf8HvoDnFr__1M5nqm0IFzZBGK3_rM_QzfqR3g` |
 
-
+Admin tokens should pass the authorization; user tokens should not, assuming they are not expired.
 ## Unit tests : 
 
 Run `npm test` and you should see all the tests running: 
