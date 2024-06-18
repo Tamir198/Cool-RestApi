@@ -5,7 +5,7 @@ const { authorizeUser } = require('../dall/index');
 
 const secretKey = process.env.SECRET_KEY;
 
-function auth(req, res) {
+function auth(req) {
   return new Promise((resolve, reject) => {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];

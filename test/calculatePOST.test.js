@@ -5,6 +5,7 @@ const auth = require('../auth/auth.js');
 const calculate = require('../service/calculate.js');
 const utils = require('../utils/writer.js');
 const controller = require('../controllers/calculate.js');
+const { OPERATIONS, ERRORS } = require('../constants/index.js');
 
 jest.mock('../auth/auth.js');
 jest.mock('../service/calculate.js');
@@ -12,11 +13,8 @@ jest.mock('../utils/writer.js');
 
 describe('calculatePOST', () => {
   let app;
+  const exampleBody = { firstNum: 10, secondNum: 0.5 };
   const token = 'some valid token';
-  const baseHeaders = {
-    Authorization: `Bearer ${token}`,
-    operation: 'exponent',
-  };
 
   beforeEach(() => {
     app = express();
@@ -30,69 +28,75 @@ describe('calculatePOST', () => {
     jest.clearAllMocks();
   });
 
-  const makeRequest = async (body) => {
-    return await request(app)
-      .post('/api/calculate')
-      .set(baseHeaders)
-      .send(body);
-  };
-
   it('should respond with the calculation result', async () => {
+    const result = 3.1622776601683795;
     auth.mockResolvedValue();
-    calculate.calculate.mockResolvedValue({ result: 3.1622776601683795 });
+    calculate.calculate.mockResolvedValue({ result: result });
     utils.writeJson.mockImplementation((res, payload) => res.json(payload));
 
-    const response = await makeRequest({ firstNum: 10, secondNum: 0.5 });
+    const response = await request(app)
+      .post('/api/calculate')
+      .set('Authorization', `Bearer ${token}`)
+      .set('operation', OPERATIONS.EXPONENT)
+      .send(exampleBody);
 
     expect(response.status).toBe(200);
-    expect(response.body).toEqual({ result: 3.1622776601683795 });
+    expect(response.body).toEqual({ result: result });
     expect(auth).toHaveBeenCalledWith(expect.anything(), expect.anything());
     expect(calculate.calculate).toHaveBeenCalledWith(
-      { firstNum: 10, secondNum: 0.5 },
-      'exponent'
+      exampleBody,
+      OPERATIONS.EXPONENT
     );
     expect(utils.writeJson).toHaveBeenCalledWith(expect.anything(), {
-      result: 3.1622776601683795,
+      result: result,
     });
   });
 
   it('should handle authentication errors', async () => {
-    auth.mockRejectedValue({ message: 'Unauthorized', status: 401 });
+    auth.mockRejectedValue({ message: ERRORS.NOT_AUTHORIZED, status: 401 });
     utils.writeJson.mockImplementation((res, payload, status) =>
       res.status(status).json(payload)
     );
 
-    const response = await makeRequest({ firstNum: 10, secondNum: 0.5 });
+    const response = await request(app)
+      .post('/api/calculate')
+      .set('Authorization', `Bearer ${token}`)
+      .set('operation', OPERATIONS.EXPONENT)
+      .send(exampleBody);
 
     expect(response.status).toBe(401);
-    expect(response.body).toEqual({ message: 'Unauthorized' });
+    expect(response.body).toEqual({ message: ERRORS.NOT_AUTHORIZED });
     expect(auth).toHaveBeenCalledWith(expect.anything(), expect.anything());
     expect(utils.writeJson).toHaveBeenCalledWith(
       expect.anything(),
-      { message: 'Unauthorized' },
+      { message: ERRORS.NOT_AUTHORIZED },
       401
     );
   });
 
   it('should handle calculation errors', async () => {
     auth.mockResolvedValue();
-    calculate.calculate.mockRejectedValue(new Error('Calculation error'));
+    calculate.calculate.mockRejectedValue(new Error(ERRORS.CALCULATION_ERROR));
     utils.writeJson.mockImplementation((res, payload, status) =>
       res.status(status).json(payload)
     );
 
-    const response = await makeRequest({ firstNum: 10, secondNum: 0.5 });
+    const response = await request(app)
+      .post('/api/calculate')
+      .set('Authorization', `Bearer ${token}`)
+      .set('operation', OPERATIONS.EXPONENT)
+      .send(exampleBody);
 
     expect(response.status).toBe(400);
-    expect(response.body).toEqual({ message: 'Calculation error' });
+    expect(response.body).toEqual({ message: ERRORS.CALCULATION_ERROR });
     expect(auth).toHaveBeenCalledWith(expect.anything(), expect.anything());
     expect(calculate.calculate).toHaveBeenCalledWith(
-      { firstNum: 10, secondNum: 0.5 },
-      'exponent'
+      exampleBody,
+      OPERATIONS.EXPONENT
     );
     expect(utils.writeJson).toHaveBeenCalledWith(
       expect.anything(),
-      { message: 'Calculation error' },
+      { message: ERRORS.CALCULATION_ERROR },
       400
     );
   });
