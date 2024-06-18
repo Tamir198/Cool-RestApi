@@ -1,4 +1,4 @@
-### Running the server
+## Running the server
 To run the server first clone the project then run:
 
 ```
@@ -26,6 +26,14 @@ For testing you can check those tokens (this will not go production and does not
 | User (Non-expire)  | Non-expire-user-non-admin| 123456     | user       | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTm9uLWV4cGlyZS1ub24tYWRtaW4tdXNlciIsInBhc3N3b3JkIjoiMTIzNDU2Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2OTk1NDgsImV4cCI6MjAzNDI3NTU0OH0.qrskmS6mcLEeV46UTGRNZF2YY9yt67tpmbRXyjKHtSM` |
 | Admin (Expired)    | Tamir                    | 123456     | admin      | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVGFtaXIiLCJwYXNzd29yZCI6IjEyMzQ1NiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxODY5NzU5NywiZXhwIjoxNzE4NzAxMTk3fQ.QuR3OoCKRUiiO54ybRwTsWQgMzNit9p2LhXi5Wej_1A` |
 | User (Expired)     | yona                     | 123456     | user       | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieW9uYSIsInBhc3N3b3JkIjoiMTIzNDU2Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2OTg5MjcsImV4cCI6MTcxODY5ODk4N30.bkEeKpf8HvoDnFr__1M5nqm0IFzZBGK3_rM_QzfqR3g` |
+
+
+## Unit tests : 
+
+Run `npm test` and you should see all the tests running: 
+
+![image](https://github.com/Tamir198/Cool-RestApi/assets/34707669/fc7f21c4-c729-4ab2-8bf8-55002eb8e0bb)
+
 
 ---
 
