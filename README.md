@@ -26,6 +26,7 @@ once imported you will see this in your postman :
 
 Once the server is running you test it with postman - just make sure to change the tokens for different results just like the video below : 
 
+https://github.com/Tamir198/Cool-RestApi/assets/34707669/ec72e6b4-6218-45e7-93e3-9779e9c54152
 
 Or you can test it via Swagger UI interface : 
 
