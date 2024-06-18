@@ -1,3 +1,12 @@
+
+#### Please note: 
+
+I wanted to make it easy for you to test this, so the validation of the JWT is using a variable  `const secretKey = 'your-secret-key';`.
+
+If this were production code, I would have placed the secretKey inside an .env file.
+
+---
+
 ## Running the server
 To run the server first clone the project then run:
 
@@ -8,10 +17,10 @@ npm start
 
 Your server will run on `http://localhost:3000`.
 
-To view the Swagger UI interface:
+To view the Swagger UI interface go to:
 
 ```
-open http://localhost:3000/docs
+http://localhost:3000/docs
 ```
 
 ---
@@ -28,6 +37,12 @@ Once the server is running you test it with postman - just make sure to change t
 
 https://github.com/Tamir198/Cool-RestApi/assets/34707669/ec72e6b4-6218-45e7-93e3-9779e9c54152
 
+Also for checking all the server functionality dont forget to check all the edge cases by changing the `operation` header : 
+
+https://github.com/Tamir198/Cool-RestApi/assets/34707669/bc77c80f-02f5-42c9-b65b-0087b44e4587
+
+
+
 Or you can test it via Swagger UI interface : 
 
 
@@ -35,9 +50,7 @@ Or you can test it via Swagger UI interface :
 https://github.com/Tamir198/Cool-RestApi/assets/34707669/66e44f91-3b5b-4036-bae0-210695123bc9
 
 
-
-
-For testing you can check those tokens (this will not go production and does not have any dangarous data so i put the tokens in here) :  
+For testing purposes, you can use these tokens (since this will not go into production and does not contain any sensitive data, I have included the tokens here):
 
 | User Type          | Name                     | Password   | Role       | Token                                                                                               |
 |--------------------|--------------------------|------------|------------|-----------------------------------------------------------------------------------------------------|
@@ -69,7 +82,7 @@ Once done you should see a new image :
 
 ![image](https://github.com/Tamir198/Cool-RestApi/assets/34707669/98da3670-e4ea-49e8-bf91-dd4c2da3ece7)
 
-To generate container from the iamge: 
+To generate container from the image: 
 
 ```
 docker compose up
@@ -92,5 +105,6 @@ cool-restapi-cool-rest-api-1  | Swagger-ui is available on http://localhost:3000
 And live container as well (it will run on the same port as the localhost so you may need to close your local server first): 
 
 ![image](https://github.com/Tamir198/Cool-RestApi/assets/34707669/acd5a375-1b66-4747-a12c-7b0f84433257)
+
 
 
