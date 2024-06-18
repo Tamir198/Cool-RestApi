@@ -1,12 +1,3 @@
-For testing you can check those tokens (this will not go production and does not have any dangarous data so i put the tokens in here) :  
-
-| User Type          | Name                     | Password   | Role       | Token                                                                                               |
-|--------------------|--------------------------|------------|------------|-----------------------------------------------------------------------------------------------------|
-| Admin (Non-expire) | Non-expire-admin-user    | 123456     | admin      | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTm9uLWV4cGlyZS11c2VyIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTg2OTkyNDMsImV4cCI6MjAzNDI3NTI0M30.pPIRx6vOjzXVcAwJi82C9bLyRyDTyznspDAIGrSZSGk` |
-| User (Non-expire)  | Non-expire-user-non-admin| 123456     | user       | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTm9uLWV4cGlyZS1ub24tYWRtaW4tdXNlciIsInBhc3N3b3JkIjoiMTIzNDU2Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2OTk1NDgsImV4cCI6MjAzNDI3NTU0OH0.qrskmS6mcLEeV46UTGRNZF2YY9yt67tpmbRXyjKHtSM` |
-| Admin (Expired)    | Tamir                    | 123456     | admin      | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVGFtaXIiLCJwYXNzd29yZCI6IjEyMzQ1NiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxODY5NzU5NywiZXhwIjoxNzE4NzAxMTk3fQ.QuR3OoCKRUiiO54ybRwTsWQgMzNit9p2LhXi5Wej_1A` |
-| User (Expired)     | yona                     | 123456     | user       | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieW9uYSIsInBhc3N3b3JkIjoiMTIzNDU2Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2OTg5MjcsImV4cCI6MTcxODY5ODk4N30.bkEeKpf8HvoDnFr__1M5nqm0IFzZBGK3_rM_QzfqR3g` |
-
 # Swagger generated server
 
 ## Overview
@@ -22,7 +13,19 @@ npm start
 To view the Swagger UI interface:
 
 ```
-open http://localhost:8080/docs
+open http://localhost:3000/docs
 ```
 
 This project leverages the mega-awesome [swagger-tools](https://github.com/apigee-127/swagger-tools) middleware which does most all the work.
+
+
+
+For testing you can check those tokens (this will not go production and does not have any dangarous data so i put the tokens in here) :  
+
+| User Type          | Name                     | Password   | Role       | Token                                                                                               |
+|--------------------|--------------------------|------------|------------|-----------------------------------------------------------------------------------------------------|
+| Admin (Non-expire) | Non-expire-admin-user    | 123456     | admin      | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTm9uLWV4cGlyZS11c2VyIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTg2OTkyNDMsImV4cCI6MjAzNDI3NTI0M30.pPIRx6vOjzXVcAwJi82C9bLyRyDTyznspDAIGrSZSGk` |
+| User (Non-expire)  | Non-expire-user-non-admin| 123456     | user       | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTm9uLWV4cGlyZS1ub24tYWRtaW4tdXNlciIsInBhc3N3b3JkIjoiMTIzNDU2Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2OTk1NDgsImV4cCI6MjAzNDI3NTU0OH0.qrskmS6mcLEeV46UTGRNZF2YY9yt67tpmbRXyjKHtSM` |
+| Admin (Expired)    | Tamir                    | 123456     | admin      | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVGFtaXIiLCJwYXNzd29yZCI6IjEyMzQ1NiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxODY5NzU5NywiZXhwIjoxNzE4NzAxMTk3fQ.QuR3OoCKRUiiO54ybRwTsWQgMzNit9p2LhXi5Wej_1A` |
+| User (Expired)     | yona                     | 123456     | user       | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieW9uYSIsInBhc3N3b3JkIjoiMTIzNDU2Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg2OTg5MjcsImV4cCI6MTcxODY5ODk4N30.bkEeKpf8HvoDnFr__1M5nqm0IFzZBGK3_rM_QzfqR3g` |
+
