@@ -12,7 +12,7 @@ module.exports.calculatePOST = function calculatePOST(
   operation
 ) {
   auth(req, res)
-    .then((user) => {
+    .then(() => {
       calculate
         .calculate(body, operation)
         .then(function (response) {
