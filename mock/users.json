@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Tamir",
+    "password": "123456",
+    "role": "admin"
+  },
+
+  {
+    "name": "yona",
+    "password": "123456",
+    "role": "user"
+  },
+  {
+    "name": "Non-expire-user",
+    "password": "123456",
+    "role": "admin"
+  },
+  {
+    "name": "Non-expire-non-admin-user",
+    "password": "123456",
+    "role": "user"
+  }
+]
