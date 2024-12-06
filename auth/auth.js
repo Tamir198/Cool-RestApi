@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const { ERRORS } = require('../constants');
 
 const { authorizeUser } = require('../dall/index');
-
+//This should do something
 const secretKey = process.env.SECRET_KEY;
 
 function auth(req) {
